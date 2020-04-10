@@ -234,6 +234,7 @@ public abstract class VirtualInfrastructure extends Timed implements VirtualMach
 	 * completely dismantled and the two minute notifications from Timed are
 	 * cancelled.
 	 */
+	
 	public void terminateScalingMechanism() {
 		// No VMs have tasks running, all jobs finished, we don't have to work on the
 		// infrastructure anymore.

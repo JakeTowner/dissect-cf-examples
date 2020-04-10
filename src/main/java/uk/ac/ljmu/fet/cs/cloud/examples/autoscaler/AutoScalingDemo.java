@@ -109,7 +109,7 @@ public class AutoScalingDemo implements TraceExhaustionCallback {
 	 * @throws Exception If the trace cannot be loaded, or if there are some
 	 *                   configuration issue.
 	 */
-	public AutoScalingDemo(int cores, int nodes, String traceFileLoc, Class<? extends VirtualInfrastructure> viclass)
+	public AutoScalingDemo(int cores, int nodes, String traceFileLoc, Class<? extends VirtualInfrastructure> viclass )
 			throws Exception {
 		if (cores < 4)
 			throw new InvalidParameterException("Per PM core count cannot be lower than 4");
@@ -186,8 +186,10 @@ public class AutoScalingDemo implements TraceExhaustionCallback {
 	 * @param args the CLI arguments
 	 * @throws Exception On any issue this application terminates with a stack trace
 	 */
+
 	public static void main(String[] args) throws Exception {
-		new AutoScalingDemo(Integer.parseInt(args[1]), Integer.parseInt(args[2]), args[0],
-				(Class<? extends VirtualInfrastructure>) Class.forName(args[3])).simulateAndprintStatistics();
+        new AutoScalingDemo(Integer.parseInt(args[1]), Integer.parseInt(args[2]), args[0],
+                (Class<? extends VirtualInfrastructure>) Class.forName(args[3])).simulateAndprintStatistics();
+		
 	}
 }
